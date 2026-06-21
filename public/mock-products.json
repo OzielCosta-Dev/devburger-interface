@@ -1,0 +1,5 @@
+[
+  { "id": 101, "name": "Cheese Burger", "url": "/src/assets/burger-sample.jpg", "price": 1590, "offer": true },
+  { "id": 102, "name": "Coca-Cola", "url": "/src/assets/drink-sample.jpg", "price": 550, "offer": false },
+  { "id": 103, "name": "Chocolate Cake", "url": "/src/assets/dessert-sample.jpg", "price": 700, "offer": true }
+]

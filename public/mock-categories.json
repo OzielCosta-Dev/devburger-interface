@@ -1,0 +1,5 @@
+[
+  { "id": 1, "name": "Burgers", "url": "/src/assets/burger-sample.jpg" },
+  { "id": 2, "name": "Drinks", "url": "/src/assets/drink-sample.jpg" },
+  { "id": 3, "name": "Desserts", "url": "/src/assets/dessert-sample.jpg" }
+]
