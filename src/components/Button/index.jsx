@@ -8,3 +8,11 @@ export function Button({ children, ...props }) {
 Button.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
+export function ButtonBack({ children, ...props }) {
+  return <ContainerButton {...props}>{children}</ContainerButton>;
+}
+
+ButtonBack.propTypes = {
+  children: PropTypes.node.isRequired,
+};

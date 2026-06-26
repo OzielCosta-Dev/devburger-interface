@@ -59,21 +59,18 @@ export const ContainerItens = styled.div`
   height: 250px;
 `;
 
-
 export const CategoryButton = styled(Link)`
   color: #ffff;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px 30px;
-    border-radius: 30px;
-    font-size: 22.5px;
-    font-weight: bold;
-    margin-top: 50px;
-    font-weight: 500;
-    text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-size: 22.5px;
+  font-weight: bold;
+  margin-top: 50px;
+  font-weight: 500;
+  text-decoration: none;
 
-
-    &:hover {
-      background-color: #9758a6;
-
-    }
-    `;
+  &:hover {
+    background-color: #9758a6;
+  }
+`;

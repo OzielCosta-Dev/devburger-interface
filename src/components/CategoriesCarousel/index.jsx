@@ -1,7 +1,13 @@
 import { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import { api } from '../../services/api';
-import { Container, Title, ContainerItens, Message, CategoryButton  } from './styles';
+import {
+  Container,
+  Title,
+  ContainerItens,
+  Message,
+  CategoryButton,
+} from './styles';
 import 'react-multi-carousel/lib/styles.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -15,12 +21,12 @@ export function CategoriesCarousel() {
   const queryParams = new URLSearchParams(search);
 
   const [activeCategory, setActiveCategory] = useState(() => {
-       const categoryId = +queryParams.get('categoria');
+    const categoryId = +queryParams.get('categoria');
 
-       if(categoryId){
-        return categoryId;
-       }
-       return 0;
+    if (categoryId) {
+      return categoryId;
+    }
+    return 0;
   });
 
   const [isLoading, setIsLoading] = useState(true);
@@ -102,18 +108,15 @@ export function CategoriesCarousel() {
           {categories.map((category) => (
             <ContainerItens key={category.id} imageUrl={category.url}>
               <CategoryButton
-
-              onClick={() => {
-                navigate(
-                  {
+                onClick={() => {
+                  navigate({
                     pathname: '/cardapio',
                     search: `?categoria=${category.id}`,
-                })
-              }}
-              
-              
-              >{category.name}</CategoryButton>
-             
+                  });
+                }}
+              >
+                {category.name}
+              </CategoryButton>
             </ContainerItens>
           ))}
         </Carousel>

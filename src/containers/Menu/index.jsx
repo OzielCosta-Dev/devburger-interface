@@ -1,12 +1,18 @@
 import { useEffect, useState } from 'react';
 import { CategoriesCarousel } from '../../components/CategoriesCarousel';
 import { OffersCarousel } from '../../components/OffersCarousel';
-import { Container, Banner, CategoryMenu, ProductsContainer, CategoryButton } from './styles';
+import {
+  Container,
+  Banner,
+  CategoryMenu,
+  ProductsContainer,
+  CategoryButton,
+} from './styles';
 import { api } from '../../services/api';
 import { formatPrice } from '../../utils/formatPrice';
 import { CardProduct } from '../../components/CardProduct';
 import { useLocation, useNavigate } from 'react-router-dom';
-
+import { Button, ButtonBack } from '../../components/Button';
 
 export function Menu() {
   const { search } = useLocation();
@@ -16,11 +22,9 @@ export function Menu() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [activeCategory, setActiveCategory] = useState(categoryId)
+  const [activeCategory, setActiveCategory] = useState(categoryId);
 
   const navigate = useNavigate();
-
-  
 
   useEffect(() => {
     async function loadCategorias() {
@@ -33,8 +37,6 @@ export function Menu() {
 
     async function loadProducts() {
       const { data } = await api.get('/products');
-
-
 
       const newProducts = data.map((product) => ({
         currencyValue: formatPrice(product.price),
@@ -49,20 +51,20 @@ export function Menu() {
   }, []);
 
   useEffect(() => {
-      setActiveCategory(categoryId);
-  }, [categoryId])
+    setActiveCategory(categoryId);
+  }, [categoryId]);
 
   useEffect(() => {
-      if(activeCategory === 0){
-        setFilteredProducts(products);
-      } else {
-        const newFilteredProducts = products.filter(
-            (product) => product.category_id === activeCategory, 
-        );
+    if (activeCategory === 0) {
+      setFilteredProducts(products);
+    } else {
+      const newFilteredProducts = products.filter(
+        (product) => product.category_id === activeCategory,
+      );
 
-        setFilteredProducts(newFilteredProducts);
-      }
-  }, [products, activeCategory])
+      setFilteredProducts(newFilteredProducts);
+    }
+  }, [products, activeCategory]);
 
   return (
     <Container>
@@ -77,25 +79,26 @@ export function Menu() {
         </h1>
       </Banner>
       <CategoryMenu>
-        {categories.map(category => (
-            <CategoryButton 
+        {categories.map((category) => (
+          <CategoryButton
             key={category.id}
             $isActiveCategory={category.id === activeCategory}
-            onClick={ () => {
-              navigate({
-                pathname: '/cardapio',
-                search: `?categoria=${category.id}`,
-              },
-              {
-                replace: true,
-              },
-            
-            );
+            onClick={() => {
+              navigate(
+                {
+                  pathname: '/cardapio',
+                  search: `?categoria=${category.id}`,
+                },
+                {
+                  replace: true,
+                },
+              );
 
               setActiveCategory(category.id);
             }}
-            
-            >{category.name}</CategoryButton>
+          >
+            {category.name}
+          </CategoryButton>
         ))}
       </CategoryMenu>
       <ProductsContainer>
@@ -103,6 +106,7 @@ export function Menu() {
           <CardProduct product={product} key={product.id} />
         ))}
       </ProductsContainer>
+      <ButtonBack onClick={() => navigate(-1)}>Voltar</ButtonBack>
     </Container>
   );
 }
