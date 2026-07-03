@@ -46,7 +46,7 @@
 .button {
   background: #0055DE;
   font-family: Arial, sans-serif;
-  color: #ffffff;
+  color: (props) => props.theme.whitefff;
   border-radius: 4px;
   border: 0;
   padding: 12px 16px;
@@ -68,6 +68,10 @@
   cursor: default;
 }
 
+.status-title{
+  text-align: center;
+}
+
 /* spinner/processing state, errors */
 .spinner,
 .spinner:before,
@@ -76,7 +80,7 @@
 }
 
 .spinner {
-  color: #ffffff;
+  color: (props) => props.theme.whitefff;
   font-size: 22px;
   text-indent: -99999px;
   margin: 0px auto;
@@ -104,8 +108,8 @@
   left: -0.2px;
   -webkit-transform-origin: 10.4px 10.2px;
   transform-origin: 10.4px 10.2px;
-  -webkit-animation: loading 2s infinite ease 1.5s;
-  animation: loading 2s infinite ease 1.5s;
+  -webkit-animation: loading 2s ease infinite 1.5s;
+  animation: loading 2s ease infinite 1.5s;
 }
 
 .spinner:after {
@@ -117,8 +121,8 @@
   left: 10.2px;
   -webkit-transform-origin: 0px 10.2px;
   transform-origin: 0px 10.2px;
-  -webkit-animation: loading 2s infinite ease;
-  animation: loading 2s infinite ease;
+  -webkit-animation: loading 2s ease infinite;
+  animation: loading 2s ease infinite;
 }
 
 /* Payment status page */
@@ -204,9 +208,10 @@ td {
 }
 
 #retry-button {
+  text-decoration: none;
   text-align: center;
   background: #0055DE;
-  color: #ffffff;
+  color: (props) => props.theme.whitefff;
   border-radius: 4px;
   border: 0;
   padding: 12px 16px;

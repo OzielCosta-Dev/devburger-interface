@@ -10,7 +10,7 @@ export const Container = styled.div`
   height: 280px;
   padding: 160px 20px 20px;
   border-radius: 28px;
-  background-color: #ffffff;
+  background-color: ${(props) => props.theme.white};
   cursor: grab;
   box-shadow: rgba(0, 0, 0, 0.35) 0 16px 32px;
   overflow: visible;
@@ -27,7 +27,7 @@ export const Container = styled.div`
 
     p {
       font-size: 18px;
-      color: #ff8c05;
+      color: ${(props) => props.theme.mainBlack};
       line-height: 24px;
       font-weight: 700;
       margin: 0;
@@ -36,7 +36,7 @@ export const Container = styled.div`
 
     strong {
       font-size: 24px;
-      color: #363636;
+      color: ${(props) => props.theme.mainBlack};
       font-weight: 800;
       line-height: 28px;
     }
@@ -56,8 +56,8 @@ export const CardImage = styled.img`
 `;
 
 export const CartButton = styled.button`
-  background-color: #9758a6;
-  color: #fff;
+  background-color: ${(props) => props.theme.purple};
+  color: ${(props) => props.theme.white};
   border: none;
   border-radius: 24px;
   padding: 14px 32px;
