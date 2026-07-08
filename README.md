@@ -46,11 +46,6 @@ O administrador pode:
 - Editar produtos
 - Fazer upload de imagens
 - Definir produtos em oferta
-## 🔐 Login
-
-<p align="center">
-  <img src="./github/Captura de tela 2026-07-08 170147.png" width="900"/>
-</p>
 ---
 
 # ✨ Funcionalidades
