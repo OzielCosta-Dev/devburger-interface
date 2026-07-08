@@ -1,16 +1,84 @@
-# React + Vite
+# DevBurger — Interface (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto frontend da aplicação DevBurger — interface de loja/admin feita em React + Vite.
 
-Currently, two official plugins are available:
+## Descrição
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Aplicação de exemplo para gerenciamento e venda de produtos (menu, carrinho, checkout via Stripe, painel admin). Contém componentes reutilizáveis, rotas de usuário/admin e integração com APIs (mockadas/local ou reais).
 
-## React Compiler
+## Tecnologias
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 18
+- Vite
+- Styled Components / Emotion
+- React Router
+- Stripe (cliente) — `@stripe/react-stripe-js`
+- MUI (icons)
 
-## Expanding the ESLint configuration
+## Pré-requisitos
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Node.js 18+ (ou compatível)
+- npm
+
+## Instalação
+
+1. Instale dependências:
+
+```
+npm install
+```
+
+2. Inicie o servidor de desenvolvimento:
+
+```
+npm run dev
+```
+
+## Scripts disponíveis
+
+- `npm run dev` — inicia o servidor de desenvolvimento (Vite)
+- `npm run build` — gera build de produção
+- `npm run preview` — serve o build localmente
+- `npm run lint` — executa ESLint no diretório `src`
+
+## Configuração
+
+- As configurações do Stripe de cliente estão em [config/stripeConfig.js](config/stripeConfig.js).
+- Dados mockados estão em `/public/mock-products.json` e `/public/mock-categories.json`.
+
+Se for usar Stripe real, defina a chave pública no arquivo de configuração ou via variável de ambiente conforme sua estratégia de deploy.
+
+## Estrutura do projeto (resumo)
+
+- `src/components` — componentes UI (Botões, Cards, Carrossel, Tabela etc.)
+- `src/containers` — pages/containers (Home, Menu, Cart, Admin, Orders)
+- `src/hooks` — contextos e hooks (CartContext, UserContext)
+- `src/services/api.js` — cliente Axios para chamadas à API backend
+- `src/styles` — estilos globais e temas
+
+## Como testar o checkout
+
+- O componente de checkout usa Stripe — veja a pasta `src/components/Stripe/CheckoutForm`.
+- Para testes locais sem Stripe real, use dados mock e fluxo de pagamento simulado do backend.
+
+## Deploy
+
+1. Gerar build:
+
+```
+npm run build
+```
+
+2. Fazer deploy do conteúdo da pasta `dist` no seu provedor (Netlify, Vercel, S3, etc.).
+
+## Contribuição
+
+Pull requests são bem-vindos. Abra uma issue para discutir mudanças maiores.
+
+## Autor
+
+Projeto entregue como trabalho final.
+
+---
+
+Arquivo criado: [README.md](README.md)
