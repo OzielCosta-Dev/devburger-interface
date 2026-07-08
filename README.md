@@ -46,7 +46,11 @@ O administrador pode:
 - Editar produtos
 - Fazer upload de imagens
 - Definir produtos em oferta
+## 🔐 Login
 
+<p align="center">
+  <img src="./github/login.png" width="900"/>
+</p>
 ---
 
 # ✨ Funcionalidades
