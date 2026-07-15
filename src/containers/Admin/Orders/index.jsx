@@ -35,8 +35,6 @@ export function Orders() {
 
       setOrders(data);
       setfilteredOrders(data);
-
-      console.log(data);
     }
 
     loadOrders();
