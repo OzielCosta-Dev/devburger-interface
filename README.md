@@ -46,7 +46,6 @@ O administrador pode:
 - Editar produtos
 - Fazer upload de imagens
 - Definir produtos em oferta
-
 ---
 
 # ✨ Funcionalidades
